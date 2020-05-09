@@ -1,3 +1,54 @@
-<p>
-  customer-edit works!
-</p>
+<form>
+  <div class="form-group row">
+    <h1>Customer Details</h1>
+  </div>
+  <div class="form-group row">
+    <label for="staticEmail" class="col-sm-2 col-form-label">Customer Name</label>
+    <div class="col-sm-10">
+      
+      <input type="text" readonly class="form-control-plaintext" id="staticEmail" 
+        [ngModel]="customer.customerName">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="staticEmail" class="col-sm-2 col-form-label">Address</label>
+    <div class="col-sm-10">
+      
+      <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com"
+      [(ngModel)]="customer.address">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="staticEmail" class="col-sm-2 col-form-label">GSTIN</label>
+    <div class="col-sm-10">
+      
+      <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com"
+      [(ngModel)]="customer.gstin">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="staticEmail" class="col-sm-2 col-form-label">PAN</label>
+    <div class="col-sm-10">
+      
+      <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com"
+      [(ngModel)]="customer.pan">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="staticEmail" class="col-sm-2 col-form-label">Phone</label>
+    <div class="col-sm-10">
+      
+      <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com"
+      [(ngModel)]="customer.phone">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
+    <div class="col-sm-10">
+      
+      
+      <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com"
+      [(ngModel)]="customer.eMail">
+    </div>
+  </div>
+</form>

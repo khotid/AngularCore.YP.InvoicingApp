@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterState, Router, ActivatedRoute } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { } from 'rxjs';
 import { CustomerModel } from '../customer';
 import { HttpService } from '../../shared/services/http-service.service';
