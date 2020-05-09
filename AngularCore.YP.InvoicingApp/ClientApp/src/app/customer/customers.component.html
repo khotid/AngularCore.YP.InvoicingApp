@@ -1,0 +1,78 @@
+<div>
+
+
+    <div class="row">
+        <div class="col-md-12 text-md-center">
+            <div class="card mb-3">
+                <div class="card-body">
+                    Customers
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.row -->
+<!-- 
+    <div class="row">
+        <div class="col-md-6 text-md-center">
+            <div class="card mb-3">
+                <div class="card-body">
+                    .col-md-6
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 text-md-center">
+            <div class="card mb-3">
+                <div class="card-body">
+                    .col-md-6
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <!-- /.row -->
+    <table class="table table-striped"> 
+        <thead>
+            <th>
+                Name
+            </th>
+            <th>
+                Address
+            </th>
+            <th>
+                Contact
+            </th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let customer of customers">
+                <td>
+                    <a [routerLink]="['details',customer.customerID]"> {{customer.customerName}}</a>
+                   
+                </td>
+                <td>
+                    {{customer.address}}
+                </td>
+                <td>
+                    <a href="tel:+91{{customer.phone}}">{{customer.phone}}</a> <br>
+                    <a href="mailto:{{customer.eMail}}">{{customer.eMail}}</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- <div class="row" *ngFor="let customer of customers">
+        <div class="card mb-3">
+            <div class="card-body">
+                <div class="col-md-4 text-md-center">
+                    {{customer.customerName}}
+                </div>
+                <div class="col-md-4 text-md-center">
+                    
+                </div>
+                <div class="col-md-4 text-md-center">
+                   
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <!-- /.row -->
+
+</div>
