@@ -19,7 +19,7 @@ export class CustomerEditComponent implements OnInit {
     this.getCustomerDetails();
   }
   getCustomerDetails() {
-    this._http.get("api/customer/customer/"+this.customerID)
+    this._http.get("api/customer/customer/" + this.customerID)
       .subscribe(
         data => {
           this.customer = <CustomerModel>data["customer"];
@@ -29,8 +29,8 @@ export class CustomerEditComponent implements OnInit {
 
       );
   }
-  customerSave(){
-    this._http.post("api/customer/AddEditCustomer",this.customer)
+  customerSave() {
+    this._http.post("api/customer/AddEditCustomer", { customer: this.customer })
       .subscribe(
         data => {
           const response = <CustomerModel>data["customer"];

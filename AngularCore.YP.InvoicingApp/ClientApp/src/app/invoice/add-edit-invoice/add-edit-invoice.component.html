@@ -5,11 +5,19 @@
       <div class="col-sm-2">
         <b>Customer: </b>
       </div>
-      <div class="col-sm-10">
+      <div class="col-sm-4">
         <div class="form-group" *ngIf="_loadComplete==0" >
           <select name="customer" class="form-control" style="width: 200px;" [(ngModel)]="invoice.customerID">
             <option *ngFor="let customer of customers" [value]="customer.customerID">{{customer.customerName}}</option>
           </select>
+        </div>
+      </div>
+      <div class="col-sm-2">
+        <b>Invoice Number: </b>
+      </div>
+      <div class="col-sm-4">
+        <div class="form-group" *ngIf="_loadComplete==0" >
+         <input type="text" name="invoiceNumber" [(ngModel)]="invoice.invoiceNumber" class="form-control">
         </div>
       </div>
     </div>
@@ -35,37 +43,37 @@
         </thead>
         <tbody>
           <tr *ngFor="let line of invoice.invoiceDetails; let i = index">
-            <td width="5%">{{i+1}}</td>
-            <td width="10%">
+            <td width="40px">{{i+1}}</td>
+            <td >
               <div class="form-group">
-                <input type="text" class="form-cotrol" placeholder="HSN No" [(ngModel)]="line.hsnNo">
+                <input type="text" class="form-cotrol" placeholder="HSN#" [(ngModel)]="line.hsnNo" style="width:65px" maxlength="7">
               </div>
             </td>
-            <td width="15%">
+            <td >
               <div class="form-group">
-                <input type="text" class="form-cotrol" [(ngModel)]="line.po">
+                <input type="text" class="form-cotrol" [(ngModel)]="line.po" placeholder="PO#" style="width:140px" maxlength="15">
               </div>
             </td>
-            <td width="20%">
+            <td >
               <div class="form-group">
-                <textarea type="textarea" name="" id="" placeholder="Description" [(ngModel)]="line.description">
+                <textarea type="textarea" name="" id="" placeholder="Description" [(ngModel)]="line.description" style="width: 100%;">
 
                 </textarea>
               </div>
             </td>
-            <td width="10%">
+            <td >
               <div class="form-group">
-                <input type="number" class="form-cotrol" placeholder="Rate" [(ngModel)]="line.rate">
+                <input type="number" class="form-cotrol" placeholder="Rate" [(ngModel)]="line.rate" style="width:80px" maxlength="7">
               </div>
             </td>
-            <td width="10%">
+            <td >
               <div class="form-group">
-                <input type="number" class="form-cotrol" placeholder="CGST" [(ngModel)]="line.cgst">
-                <input type="number" class="form-cotrol" placeholder="SGST" [(ngModel)]="line.sgst">
+                C:<input type="number" class="form-cotrol" placeholder="CGST" [(ngModel)]="line.cgst" style="width:40px" maxlength="2" minlength="1">
+                &nbsp;&nbsp;&nbsp;&nbsp;S:<input type="number" class="form-cotrol" placeholder="SGST" [(ngModel)]="line.sgst" style="width:40px" maxlength="2" minlength="1">
               </div>
             </td>
-            <td width="10%">
-              <div class="form-group">
+            <td >
+              <div class="form-group" style="width:120px">
                 <!-- <input type="number" class="form-cotrol" placeholder="Amount" disabled > -->
                 {{line.rate+line.rate*line.cgst/100+line.rate*line.sgst/100}}
               </div>
@@ -76,7 +84,7 @@
     </div>
     <div class="col-sm-12">
       <div class="form-group ">
-        <button class="form-control float-left" style="width: 100px;" (click)="addRow()">Save Invoice</button>
+        <button class="form-control float-left" style="width: 100px;" (click)="saveInvoice()">Save Invoice</button>
         <button class="form-control float-right" style="width: 100px;" (click)="addRow()">Add Row</button>
       </div>
     </div>

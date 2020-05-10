@@ -7,11 +7,11 @@ import { InvoiceHeader, InvoiceDetail } from '../invoice.model';
 @Component({
   selector: 'app-add-edit-invoice',
   templateUrl: './add-edit-invoice.component.html',
-  styleUrls: ['./add-edit-invoice.component.css']  
+  styleUrls: ['./add-edit-invoice.component.css']
 })
 export class AddEditInvoiceComponent implements OnInit {
-  _loadComplete:number = 1;
-  invoice:InvoiceHeader=new InvoiceHeader();
+  _loadComplete: number = 1;
+  invoice: InvoiceHeader = new InvoiceHeader();
 
   constructor(private _http: HttpService) {
     this.getCustomers();
@@ -32,8 +32,18 @@ export class AddEditInvoiceComponent implements OnInit {
 
   ngOnInit() {
   }
-  addRow(){
+  addRow() {
     this.invoice.invoiceDetails.push(new InvoiceDetail());
+  }
+  saveInvoice() {
+    this._http.post("api/invoice/save", { Invoice: this.invoice }).subscribe(
+      data => {
+        console.log(data);
+      },
+      err => {
+        console.log(err);
+      }
+    );
   }
 
 }

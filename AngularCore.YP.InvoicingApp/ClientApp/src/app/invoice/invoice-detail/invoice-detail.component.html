@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" *ngIf="_loadComplete==0">
   <div class="row">
     <div class="col-sm-12">
 
@@ -73,7 +73,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr *ngFor="let line of invoice.invoiceDetails; let i = index">
             <td width="5%">Item#</td>
             <td width="10%"><input type="text" class="form-cotrol" placeholder="HSN No"></td>
             <td width="15%"><input type="text" class="form-cotrol"></td>

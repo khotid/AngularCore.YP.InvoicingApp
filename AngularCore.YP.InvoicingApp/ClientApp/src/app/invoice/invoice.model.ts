@@ -17,7 +17,7 @@ export class InvoiceHeader {
 export class InvoiceDetail {
     constructor(){        
     }
-    invoiceDetailID: number=-1;
+    invoiceDetailID: number;
     hsnNo: string;
     po: string;
     description: string;

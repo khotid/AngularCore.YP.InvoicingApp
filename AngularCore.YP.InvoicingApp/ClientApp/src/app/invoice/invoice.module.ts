@@ -17,11 +17,11 @@ export const routes: Routes = [
     component:AddEditInvoiceComponent
   },
   {
-    path:'edit',
+    path:'edit/:id',
     component:AddEditInvoiceComponent
   },
   {
-    path:"detail",
+    path:"detail/:id",
     component:InvoiceDetailComponent
   }
   

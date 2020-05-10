@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AngularCore.YP.InvoicingApp.Controllers
 {
-    [Route("api/{{controller}}")]
+    [Route("api/[controller]")]
     public class InvoiceController : Controller
     {
         private IInvoiceService _service;
@@ -16,18 +16,18 @@ namespace AngularCore.YP.InvoicingApp.Controllers
         {
             _service = service;
         }
-        [HttpPost("List")]
-        public InvoicesViewModel List(GetInvoiceViewModel param)
+        [HttpPost("[action]")]
+        public InvoicesViewModel List([FromBody]GetInvoiceViewModel param)
         {
             return _service.GetInvoices(param.PageNumber, param.PageSize);
         }
-        [HttpGet("Detail")]
-        public InvoiceViewModel Detail(int InvoiceHeaderID)
+        [HttpGet("[action]/{InvoiceHeaderID}")]
+        public InvoiceViewModel Detail([FromRoute]int InvoiceHeaderID)
         {
             return _service.GetInvoiceDetail(InvoiceHeaderID);
         }
-        [HttpPost("save")]
-        public int Save(InvoiceViewModel invoice)
+        [HttpPost("[action]")]
+        public int Save([FromBody]InvoiceViewModel invoice)
         {
             return _service.SaveInvoice(invoice);
         }

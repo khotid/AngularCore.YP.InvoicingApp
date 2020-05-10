@@ -37,12 +37,16 @@ namespace AngularCore.YP.InvoicingApp.Infra.Data.Repository
             if (invoice.InvoiceHeaderID > 0)
             {
                 invoice.Updated = DateTime.Now;
-                return _ctx.InvoiceHeaders.Update(invoice).Entity.InvoiceHeaderID;
+                var retval = _ctx.InvoiceHeaders.Update(invoice).Entity.InvoiceHeaderID;
+                _ctx.SaveChanges();
+                return retval;
             }
             else
             {
                 invoice.Created = DateTime.Now;
-                return _ctx.InvoiceHeaders.Add(invoice).Entity.InvoiceHeaderID;
+                var retval = _ctx.InvoiceHeaders.Add(invoice).Entity.InvoiceHeaderID;
+                _ctx.SaveChanges();
+                return retval;
             }
         }
     }

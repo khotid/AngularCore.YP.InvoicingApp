@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AngularCore.YP.InvoicingApp.Domain.Models
 {
@@ -9,6 +10,7 @@ namespace AngularCore.YP.InvoicingApp.Domain.Models
     {
 
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int InvoiceHeaderID { get; set; }
         [Required]
         [MaxLength(20)]
@@ -27,6 +29,7 @@ namespace AngularCore.YP.InvoicingApp.Domain.Models
     {
 
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int InvoiceDetailID { get; set; }
         [MaxLength(200)]
         public string HSNNo { get; set; }
