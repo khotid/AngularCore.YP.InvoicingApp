@@ -1,5 +1,8 @@
 import { CustomerModel } from "../customer/customer";
 export class InvoiceHeader {
+    constructor(){
+        this.invoiceDetails=[];
+    }
     invoiceHeaderID: number;
     invoiceNumber: string;
     customer: CustomerModel;
@@ -12,15 +15,18 @@ export class InvoiceHeader {
     updated: Date;
 }
 export class InvoiceDetail {
-    invoiceDetailID: number;
+    constructor(){        
+    }
+    invoiceDetailID: number=-1;
     hsnNo: string;
     po: string;
     description: string;
     wgTrate: string;
-    Amount: number;
+    rate:number;
+    amount: number;
     gstPercentage: number;
-    cgst: number;
-    sgst: number;
+    cgst: number=9;
+    sgst: number=9;
     invoiceHeaderID: number;
     created: Date;
     updated: Date;

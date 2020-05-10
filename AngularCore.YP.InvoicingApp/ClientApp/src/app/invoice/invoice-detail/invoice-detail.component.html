@@ -1,3 +1,136 @@
-<p>
-  invoice-detail works!
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+
+
+      <!-- Invoice Header -->
+      <table class="table table-bordered">
+        <tr>
+          <td colspan="6" class="text-center">
+            GST Tax Invoice <br>
+            Under(GST Rule 2017, Rule 7 Sec 31)
+          </td>
+        </tr>
+        <tr>
+          <td colspan="5">
+            <h4>Yadav Pattern Works</h4>
+            GAT No: 1026, H No: 1524/5. Behind Wine Park, Bambavade, Taluka Palus<br>
+            District Sangli, State Maharashtra, India. PIN -
+          </td>
+          <td class="logoYP" colspan="1">
+            LOGO
+          </td>
+        </tr>
+        <tr class="VendorDetails">
+          <td colspan="2">
+            <b>GSTIN Unique ID: 27AIBPY1385P1ZG</b><br>
+            <b>PAN No: AIBPY1385P</b><br>
+            State Code: 27<br>
+            Invoice Type: Local Invoice<br>
+            GST Type:
+          </td>
+          <td colspan="2">
+            Payment Term: AGST<br>
+            DELIVERY/COD/VPP/PRO<br>
+            Account No:<br>
+            IFSC Code:<br>
+            Transportor / Vehicle :
+          </td>
+          <td colspan="2">
+            <b>Invoice No: </b><br>
+            <b> Date: </b><br>
+            <b>GRN No:</b>
+          </td>
+        </tr>
+        <tr class="CustomerDetails">
+          <td colspan="3" class="BillTo">
+            <b>Detail of Reciever:(Bill To) Vendor Code: </b><br>
+            <b>Customer Name</b><br>
+            Customer Address with PIN <br>
+            <b>GSTIN No: GSTNOOFCUSTOMER, PAN No: PANNOCUST1</b>
+          </td>
+          <td colspan="3" class="ShipTo">
+            <b>Detail of Consignee: (Ship To)</b><br>
+            Customer Address
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="row form-group">
+    <!-- Invoice Lines -->
+    <div class="col-sm-12">
+      <table class="table table-bordered table-striped">
+        <thead class="font-weight-bold">
+          <tr>
+            <td></td>
+            <td>HSN No</td>
+            <td>PO</td>
+            <td>Description</td>
+            <td>Rate</td>
+            <td>GST</td>
+            <td>Amount</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td width="5%">Item#</td>
+            <td width="10%"><input type="text" class="form-cotrol" placeholder="HSN No"></td>
+            <td width="15%"><input type="text" class="form-cotrol"></td>
+            <td width="20%"><textarea type="textarea" name="" id="" placeholder="Description"></textarea></td>
+            <td width="10%"><input type="number" class="form-cotrol" placeholder="Rate"></td>
+            <td width="10%">              <input type="number" class="form-cotrol" placeholder="CGST">              <input type="number" class="form-cotrol" placeholder="SGST">            </td>
+            <td width="10%"><input type="number" class="form-cotrol" placeholder="Amount" disabled></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div>
+    <!-- Invoice footer -->
+    <table class="table table-bordered font-weight-bold">
+      <tr>
+        <td>Total Quantity</td>
+        <td></td>
+        <td>Total Weight</td>
+        <td></td>
+        <td colspan="2">Sub Total</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td colspan="4"></td>
+        <td colspan="2">Total Taxable</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td colspan="4" rowspan="2"></td>
+        <td colspan="2">Central GST</td>
+        <td></td>
+      </tr>
+      <tr>      
+        <td colspan="2">State GST</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td colspan="4"></td>
+        <td colspan="2">Grand Total</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td colspan="3">All Disputes are subject to Sangli Jurisdiction</td>
+        <td colspan="1" rowspan="2"></td>
+        <td colspan="3" rowspan="2">
+          for YADAV PATTERN WORKS <br><br>
+          Authorized Signatory
+        </td>
+        
+      </tr>
+      <tr>
+        <td>Checked By</td>
+        <td>Received By</td>
+        <td>Account No</td>
+      </tr>
+    </table>
+
+  </div>
+</div>

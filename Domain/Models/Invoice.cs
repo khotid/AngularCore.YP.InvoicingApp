@@ -36,6 +36,7 @@ namespace AngularCore.YP.InvoicingApp.Domain.Models
         public string Description { get; set; }
         [MaxLength(200)]
         public string WGTrate { get; set; }
+        public decimal Rate { get; set; }
         public decimal Amount { get; set; }
         public int GSTPercentage { get; set; }
         public decimal CGST { get; set; }
