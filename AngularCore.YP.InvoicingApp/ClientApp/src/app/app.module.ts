@@ -27,10 +27,16 @@ import { HttpService } from './shared/services/http-service.service';
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
+
+      
       {
         path: 'customers', 
         loadChildren: '../app/customer/customer.module#CustomerModule'
       },
+      {
+        path:'invoice',
+        loadChildren:"../app/invoice/invoice.module#InvoiceModule"
+      }
     ])
   ],
   providers: [HttpService],

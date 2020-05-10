@@ -29,4 +29,15 @@ export class CustomerEditComponent implements OnInit {
 
       );
   }
+  customerSave(){
+    this._http.post("api/customer/AddEditCustomer",this.customer)
+      .subscribe(
+        data => {
+          const response = <CustomerModel>data["customer"];
+          console.log(response);
+        },
+        err => console.log(err)
+
+      );
+  }
 }

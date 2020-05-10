@@ -14,5 +14,7 @@ namespace CleanArch.Infra.Data.Context
         public DbSet<Course> Courses { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Vendor> Vendors { get; set; }
+        public DbSet<InvoiceHeader> InvoiceHeaders { get; set; }
+        public DbSet<InvoiceDetail> InvoiceDetails { get; set; }
     }
 }

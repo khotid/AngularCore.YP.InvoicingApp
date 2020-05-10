@@ -20,4 +20,12 @@ export class HttpService {
       })).pipe(catchError(this.handleError));
     return data;
   }
+  post(url:string,data:any):Observable<any>{
+    var obs = this._http.post(this.baseUrl+url,data)
+    .pipe(map(response=>{
+      return response;
+    }))
+    .pipe(catchError(this.handleError))
+    return obs;
+  }
 }
